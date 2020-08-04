@@ -1,0 +1,9 @@
+body
+  script.
+    window.initChatlayer = function() {
+      chatlayer({
+        token: '#{token}'
+      })
+    }
+  script(src=scriptSrc, onload="initChatlayer()")
+  h1 Hey!

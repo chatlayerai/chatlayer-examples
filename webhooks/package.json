@@ -1,0 +1,18 @@
+{
+  "name": "webhooks",
+  "version": "1.0.0",
+  "description": "Test a Chatlayer.ai webhook integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Mahen Vermeulen",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.14",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
