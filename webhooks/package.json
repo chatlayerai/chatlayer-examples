@@ -9,6 +9,7 @@
   "author": "Mahen Vermeulen",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bunyan": "^1.8.14",
     "express": "^4.17.1"
   },
