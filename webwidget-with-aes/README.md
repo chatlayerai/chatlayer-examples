@@ -2,9 +2,9 @@
 Examples for developers
 
 
-### Steps to follow to run:
+### Running the server:
 - firstly copy the .env.example file into .env file
-`cp .env.example .env`
+  run `cp .env.example .env` from the root of this directory
 - fill in the values for `PORT`, `CHATLAYER_CHATBOX_TOKEN`, `AES_SECRET` in `.env` file
     - CHATLAYER_CHATBOX_TOKEN: The token can be found in the Chat Widget configuration window as
     `<script src="https://chatbox.staging.chatlayer.ai/sdk/CHATLAYER_CHATBOX_TOKEN" onload='chatlayer()' async>
