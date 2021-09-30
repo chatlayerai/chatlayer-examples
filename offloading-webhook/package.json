@@ -7,7 +7,7 @@
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Mahen Vermeulen",
+  "author": "Chatlayer",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
