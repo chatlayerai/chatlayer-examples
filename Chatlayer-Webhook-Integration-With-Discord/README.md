@@ -3,17 +3,18 @@ A simple webhook integration of chatlayer webhook with a discord bot to order pi
 
 In order to run this project do the following
 
-- Log in into discord.com/developers
+- Log in into [discord](https://discord.com/developers)
 - Select NEW APPLICATION in the top right corner
 - Give your application a name
 - Select "bot" in the lefthand menu 
-- Click ADD bot, comfirm
+- Click ADD bot, confirm
 - Copy the .env.example file into .env file. To do so run `cp .env.example .env` from the root of this directory
 - Copy your token value and assign it to .env varibale `DISCORD_TOKEN`
 - Copy your application ID, you can find this value under the GENERAL INFORMATION tab on the left
-- Surf to [discord permissions](https://www.discordapi.com/permissions.html)
+- Surf to [discord permissions](https://discordapi.com/permissions.html)
 - Select everything
-- Copy paste your application ID and invite your bot to your channel
+- Copy paste your application ID and invite your bot to your channel with the link at the bottom of the page.
+- Set the prefix for your bot in the .env (Prefix is the command that you want the bot to respond to for example if you set it to  `-` the bot will only look into the messages starting with that prefix)
 - run `npm start` on the root of this directory to start the server. If you haven't set the .env variable `PORT` the default port is `3000`
 - Expose your localhost with ngrok
 - Copy paste your ngrok url in cms.chatlayer.ai in the webhook config promt
