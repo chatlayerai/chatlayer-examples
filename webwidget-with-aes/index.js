@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config()
 
-const serverPort = process.env.PORT || 4045;
+const serverPort = process.env.PORT || 4044;
 const CHATLAYER_CHATBOX_URL = process.env.CHATLAYER_CHATBOX_URL;
 const CHATLAYER_CHATBOX_TOKEN = process.env.CHATLAYER_CHATBOX_TOKEN;
 const AES_SECRET = process.env.AES_SECRET;
