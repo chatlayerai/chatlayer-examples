@@ -3,7 +3,7 @@ Examples for developers
 
 
 ### Running the server:
-- firstly copy the .env.example file into .env file
+- first copy the .env.example file into .env file
   run `cp .env.example .env` from the root of this directory
 - fill in the values for `PORT`, `CHATLAYER_CHATBOX_TOKEN`, `AES_SECRET` in `.env` file
     - CHATLAYER_CHATBOX_TOKEN: The token can be found in the Chat Widget configuration window as
