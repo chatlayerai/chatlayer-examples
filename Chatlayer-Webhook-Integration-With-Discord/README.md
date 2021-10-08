@@ -1,5 +1,5 @@
 # DISCORD-CHATLAYER-PIZZABOT
-A simple webhook integration of chatlayer webhook with a discord bot to order pizza
+A simple webhook integration of Chatlayer webhook with a Discord bot to order pizza
 
 In order to run this project do the following
 
