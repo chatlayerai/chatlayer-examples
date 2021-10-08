@@ -9,7 +9,7 @@ In order to run this project do the following
 - Select "bot" in the lefthand menu 
 - Click ADD bot, confirm
 - Copy the .env.example file into .env file. To do so run `cp .env.example .env` from the root of this directory
-- Copy your token value and assign it to .env varibale `DISCORD_TOKEN`
+- Copy your token value and assign it to .env variable `DISCORD_TOKEN`
 - Copy your application ID, you can find this value under the GENERAL INFORMATION tab on the left
 - Surf to [discord permissions](https://discordapi.com/permissions.html)
 - Select everything
