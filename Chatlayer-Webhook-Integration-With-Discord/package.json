@@ -1,7 +1,7 @@
 {
-  "name": "pizzabot",
+  "name": "discord-bot",
   "version": "1.0.0",
-  "description": "chatlayer discord pizzabot",
+  "description": "chatlayer discord bot",
   "repository": {
     "type": "git",
     "url": "https://github.com/chatlayerai/chatlayer-examples",
@@ -13,7 +13,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "pizza",
     "chatlayer",
     "discord",
     "node.js",
