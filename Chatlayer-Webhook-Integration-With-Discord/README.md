@@ -3,7 +3,7 @@ A simple webhook integration of Chatlayer webhook with a Discord bot to order pi
 
 In order to run this project do the following
 
-- Log in into [discord](https://discord.com/developers)
+- Log in into [Discord](https://discord.com/developers)
 - Select NEW APPLICATION in the top right corner
 - Give your application a name
 - Select "bot" in the lefthand menu 
