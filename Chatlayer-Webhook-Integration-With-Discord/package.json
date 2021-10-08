@@ -2,6 +2,11 @@
   "name": "pizzabot",
   "version": "1.0.0",
   "description": "chatlayer discord pizzabot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chatlayerai/chatlayer-examples",
+    "directory": "Chatlayer-Webhook-Integration-With-Discord"
+  },
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
