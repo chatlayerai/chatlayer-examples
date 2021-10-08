@@ -19,7 +19,7 @@ In order to run this project do the following
 - Expose your localhost with ngrok
 - Copy paste your ngrok url in cms.chatlayer.ai in the webhook config promt
 - Copy paste the webhook url provided by chatlayer in your .env variable `CHATLAYER_WEBHOOK_URL`
-- If you set your webhook url to only accept with a token then make sure to copy paste the token into .env variable `WEBHOOK_TOKEN`
+- If you set your webhook url to only accept with a token then make sure to add the token into environment variable `WEBHOOK_TOKEN`
 - Don't forget to create a token on cms.chatlayer.ai paste this value in your .env variable `CHATLAYER_TOKEN`
 - Restart your local server
 
