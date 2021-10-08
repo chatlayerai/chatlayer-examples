@@ -3,65 +3,27 @@ const axios = require('axios');
 const express = require('express');
 require('dotenv').config();
 
-const client = new Discord.Client();
+const CHATLAYER_WEBHOOK_URL = process.env.CHATLAYER_WEBHOOK_URL;
 
+//Create client and add listeners
+const createClientWithListeners = () => {
+    const client = new Discord.Client();
+    client.once('ready', () => {
+        console.log('discord bot is live');
+    });
+    client.on('message', onMessage);
+    return client;
+}
+const client = createClientWithListeners();
+client.login(process.env.DISCORD_TOKEN).catch(err=>{
+    console.log('Could not login into discord with error', err);
+});
+
+// Create express server and add a webhook url
 const app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0');
-
-client.once('ready', () => {
-    console.log('discord bot is live');
-});
-
-const CHATLAYER_WEBHOOK_URL = process.env.CHATLAYER_WEBHOOK_URL;
-
-const createIncomingMessageForChatlayer = ({userMessage, author, originalMessage}) => {
-    console.log(originalMessage)
-    return {
-        message: {
-            textMessage: {
-                text: userMessage
-            },
-        },
-        user: {
-            id: originalMessage.channel.id,
-            firstName: author.username,
-            preferredLanguage: author.locale ?? 'en'
-        },
-        sessionData: {
-            channelId: originalMessage.channel.id
-        }
-    }
-}
-
-const sendIncomingMessageToChatlayer = async (message) => {
-    return axios.post(CHATLAYER_WEBHOOK_URL, message, {
-        headers: {
-            'Authorization': `Bearer ${process.env.CHATLAYER_TOKEN}`
-        }
-    });
-}
-
-const onMessage = async (message) => {
-    if (message.author.bot) {
-        return;
-    }
-    if (message.content.startsWith(process.env.PREFIX)) {
-        const userMessage = message.content.substring(process.env.PREFIX.length);
-        const chatlayerIncomingMessage = createIncomingMessageForChatlayer({
-            userMessage: userMessage,
-            author: message.author,
-            originalMessage: message,
-        });
-        await sendIncomingMessageToChatlayer(chatlayerIncomingMessage).catch(err => {
-            message.channel.send(
-                `Error occured ${err.message}`
-            );
-        })
-    }
-}
-
 app.post('/', (req, res) => {
     //check if verification code is correct
     if (req.body.verifyToken !== process.env.WEBHOOK_TOKEN) {
@@ -83,7 +45,47 @@ app.post('/', (req, res) => {
     }
 })
 
-client.on('message', onMessage)
-
-client.login(process.env.DISCORD_TOKEN);
-
+// Utility methods to convert and process messages
+const createIncomingMessageForChatlayer = ({userMessage, author, originalMessage}) => {
+    console.log(originalMessage)
+    return {
+        message: {
+            textMessage: {
+                text: userMessage
+            },
+        },
+        user: {
+            id: originalMessage.channel.id,
+            firstName: author.username,
+            preferredLanguage: author.locale ?? 'en'
+        },
+        sessionData: {
+            channelId: originalMessage.channel.id
+        }
+    }
+}
+const sendIncomingMessageToChatlayer = async (message) => {
+    return axios.post(CHATLAYER_WEBHOOK_URL, message, {
+        headers: {
+            'Authorization': `Bearer ${process.env.CHATLAYER_TOKEN}`
+        }
+    });
+}
+const onMessage = async (message) => {
+    if (message.author.bot) {
+        return;
+    }
+    if (message.content.startsWith(process.env.PREFIX)) {
+        const userMessage = message.content.substring(process.env.PREFIX.length);
+        const chatlayerIncomingMessage = createIncomingMessageForChatlayer({
+            userMessage: userMessage,
+            author: message.author,
+            originalMessage: message,
+        });
+        await sendIncomingMessageToChatlayer(chatlayerIncomingMessage).catch(err => {
+            message.channel.send(
+                `Error occured ${err.message}`
+            );
+        })
+    }
+}
