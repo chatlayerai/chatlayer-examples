@@ -15,7 +15,7 @@ In order to run this project do the following
 - Select everything
 - Copy paste your application ID and invite your bot to your channel with the link at the bottom of the page.
 - Set the prefix for your bot in the .env (Prefix is the command that you want the bot to respond to for example if you set it to  `-` the bot will only look into the messages starting with that prefix)
-- run `npm start` on the root of this directory to start the server. If you haven't set the .env variable `PORT` the default port is `3000`
+- run `npm start` on the root of this directory to start the server. If you haven't set the environment variable `PORT` the default port is `3000`
 - Expose your localhost with ngrok
 - Copy paste your ngrok url in cms.chatlayer.ai in the webhook config promt
 - Copy paste the webhook url provided by chatlayer in your .env variable `CHATLAYER_WEBHOOK_URL`
