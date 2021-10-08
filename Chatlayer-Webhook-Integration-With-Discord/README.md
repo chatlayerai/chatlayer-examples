@@ -18,9 +18,9 @@ In order to run this project do the following
 - run `npm start` on the root of this directory to start the server. If you haven't set the environment variable `PORT` the default port is `3000`
 - Expose your localhost with ngrok
 - Copy paste your ngrok url in cms.chatlayer.ai in the webhook config promt
-- Copy paste the webhook url provided by chatlayer in your .env variable `CHATLAYER_WEBHOOK_URL`
+- Copy paste the webhook url provided by Chatlayer in your .env variable `CHATLAYER_WEBHOOK_URL`
 - If you set your webhook url to only accept with a token then make sure to add the token into environment variable `WEBHOOK_TOKEN`
 - Don't forget to create a token on Chatlayer at  https://app.chatlayer.ai/tokens. paste this value in your environment variable `CHATLAYER_TOKEN`
-- Restart your local server
+- Restart your local server. To restart, just stop your service by pressing `ctrl + c` on the terminal where its running and the run `npm start` again.
 
 ### Have fun !!!
