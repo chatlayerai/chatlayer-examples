@@ -1,9 +1,13 @@
-require('dotenv').config();
-const express = require('express');
-const crypto = require('crypto');
+const dotenv = require('dotenv');
+dotenv.config()
+
+const serverPort = process.env.PORT || 4044;
 const CHATLAYER_CHATBOX_URL = process.env.CHATLAYER_CHATBOX_URL;
 const CHATLAYER_CHATBOX_TOKEN = process.env.CHATLAYER_CHATBOX_TOKEN;
-const AES_SECRET = '5ce592edd460318055a44dc636d4adf01e0b34c18a5a8d24749bc06c93c38d44';
+const AES_SECRET = process.env.AES_SECRET;
+
+const express = require('express');
+const crypto = require('crypto');
 
 const app = express();
 app.set('view engine', 'pug');
@@ -31,7 +35,6 @@ app.get('/', (req, res) => {
   res.render('index', { scriptSrc: `${CHATLAYER_CHATBOX_URL}/sdk/${CHATLAYER_CHATBOX_TOKEN}`, token });
 });
 
-const serverPort = process.env.PORT || 4045;
 app.listen(serverPort, () => {
   console.log(`🚀 - Running on port ${serverPort}`);
   console.log(`http://localhost:${serverPort}`)

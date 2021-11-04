@@ -1,8 +1,11 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
+
+//TODO you can make the security stronger by checking if the verify token matches the one you put in the platform.
 
 app.use(bodyParser.json());
 app.get('/', (req, res) => {
@@ -38,5 +41,5 @@ app.post('/', (req, res) => {
   res.sendStatus(200);
 });
 
-const port = process.env.PORT || 9003
+const port = process.env.PORT || 9000;
 app.listen(port, () => console.log(`Running on ${port}`));
