@@ -1,6 +1,3 @@
-# MOVED
-Moved to [gitlab](https://gitlab.com/sinch/sinch-projects/applications/teams/chatlayer/chatlayer-examples/)
-
 # chatlayer-examples
 Examples for developers.
 
